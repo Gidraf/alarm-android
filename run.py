@@ -1,7 +1,11 @@
 import os
-from app import create_app
+from flask import Flask, render_template
 
-app = create_app(os.environ.get('environ'))
+app = Flask(__name__,instance_relative_config=True)
+
+app.route("/")
+def home():
+    return render_template("home.html"), 200
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True)
