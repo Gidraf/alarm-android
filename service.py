@@ -16,7 +16,7 @@ logger = get_task_logger(__name__)
 def get_article(url,read_time):
     # logger.error("I am error")
     """Scrape URLs to generate article content."""
-    subprocess.call(f'''termux-vibrate -d 5000 -f && termux-notification  --sound --title "Time to read {url}" --ongoing''', shell=True)
+    subprocess.call(f'''termux-vibrate -d 5000 -f && termux-notification  --sound --title "Time to read {url}"''', shell=True)
 
 
 def getImage(link):
