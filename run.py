@@ -3,7 +3,6 @@ import json
 from nntplib import ArticleInfo
 import os
 from time import time
-from turtle import pd
 from flask import Flask, jsonify, render_template,request
 import sqlite3
 
