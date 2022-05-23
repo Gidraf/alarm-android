@@ -14,7 +14,7 @@ def home():
         url = request.form.get("url")
         time = request.form.get("time")
         # import pdb; pdb.set_trace()
-        eta = arrow.get(time).datetime
+        eta = arrow.get(time,"Africa/Nairobi").datetime
         get_article.apply_async(args=[url, time], eta=eta)
         return render_template("success.html",sucess="get"), 200
 
