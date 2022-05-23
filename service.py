@@ -1,4 +1,3 @@
-from turtle import title
 from celery import Celery
 import subprocess
 import requests
