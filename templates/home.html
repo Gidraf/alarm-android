@@ -50,26 +50,6 @@ div {
   
     <input type="submit" value="Submit">
   </form>
-  <h1 >
-      Articles
-  </h1>
-  <section style="background-color: #294e2b62; padding: 2rem;">
-      {%for a in articles%}
-      <li style="color: blue; font-size: 2em; max-height: 100px; background-color: #284d2a34; border-radius: 5px; list-style: none; margin-top: .5rem;">
-        {%if a[2] != "null"%} 
-        <h4 style="margin: 0;">{{a[2]}}</h4>
-        {%else%}
-        <h4 style="margin: 0;">{{a[1]}}</h4>
-        {%endif%}
-        {%if a[3] != "null"%} 
-        <img style="width: 50%; height: 40px;" src="{{a[3]}}"/>
-        {%endif%}
-        {%if a[3] != "null"%} 
-          <p>{{a[3]}}</p>
-          {%endif%}
-      </li>
-      {%endfor%}
-      </section>
 </div>
 
 </body>
