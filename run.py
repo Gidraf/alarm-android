@@ -14,8 +14,8 @@ def home():
         url = request.form.get("url")
         time = request.form.get("time")
         # import pdb; pdb.set_trace()
-        eta = arrow.get(time,"Africa/Nairobi").datetime
-        get_article.apply_async(args=[url, time], eta=eta)
+        eta = arrow.get(time,"Africa/Nairobi").utcnow()
+        get_article.apply_async(args=[url, time], eta=eta.to('Africa/Nairobi'))
         return render_template("success.html",sucess="get"), 200
 
 if __name__ == "__main__":
