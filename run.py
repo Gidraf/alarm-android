@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 from flask import Flask, render_template,request
 from service import get_article
+import arrow
 
 app = Flask(__name__,instance_relative_config=True)
 
@@ -12,8 +13,8 @@ def home():
     else:
         url = request.form.get("url")
         time = request.form.get("time")
-        import pdb; pdb.set_trace()
-        eta = datetime.strptime(time, )
+        # import pdb; pdb.set_trace()
+        eta = arrow.get(time).datetime
         get_article.apply_async(args=[url, time], eta=eta)
         return render_template("success.html",sucess="get"), 200
 
