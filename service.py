@@ -12,7 +12,8 @@ def get_article(url,read_time):
     text = requests.get(url).text
     link = BeautifulSoup(text, 'html.parser')
     title = getTitle(link)
-    subprocess.call(f'''termux-vibrate -d 5000 -f && termux-notification  --sound --title "Time to read {title}" --id "{url}"  --action "xdg-open {url}"''', shell=True)
+    image_link = getImage(link)
+    subprocess.call(f'''termux-vibrate -d 5000 -f && termux-notification --image-path {image_link}  --sound --title "Time to read {title}" --id "{url}"  --action "xdg-open {url}"''', shell=True)
 
 
 def getTitle(link):
