@@ -12,7 +12,8 @@ def home():
     else:
         url = request.form.get("url")
         time = request.form.get("time")
-        eta = datetime.utcnow() + timedelta(minutes=int(time))
+        import pdb; pdb.set_trace()
+        eta = datetime.strptime(time, )
         get_article.apply_async(args=[url, time], eta=eta)
         return render_template("success.html",sucess="get"), 200
 
